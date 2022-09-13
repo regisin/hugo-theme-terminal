@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="post">
-  <h1 class="post-title">
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+  <h2 class="post-title">
+    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
   <div class="post-meta">
     {{ if .Params.Date }}
       <span class="post-date">
@@ -30,9 +30,9 @@
 
   {{ if (.Params.Toc | default .Site.Params.Toc) }}
     <div class="table-of-contents">
-      <h2>
+      <h3>
         {{ (.Params.TocTitle | default .Site.Params.TocTitle) | default "Table of Contents" }}
-      </h2>
+      </h3>
       {{ .TableOfContents }}
     </div>
   {{ end }}
