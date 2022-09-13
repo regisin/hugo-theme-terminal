@@ -21,7 +21,19 @@
 {{- end }}
 
 <!-- Icons -->
-<link rel="apple-touch-icon" href="{{ "img/apple-touch-icon-192x192.png" | absURL }}">
+{{ if isset $.Site.Params "appleTouch" }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $.Site.Params.appleTouch | absURL }}">
+{{ end }}
+{{ if isset $.Site.Params "favicon32x32" }}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ $.Site.Params.favicon32x32 | absURL }}">
+{{ end }}
+{{ if isset $.Site.Params "favicon16x16" }}
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ $.Site.Params.favicon16x16 | absURL }}">
+{{ end }}
+{{ if isset $.Site.Params "manifest" }}
+  <link rel="manifest" href="{{ $.Site.Params.manifest | absURL }}">
+{{ end }}
+
 {{ if isset $.Site.Params "favicon" }}
   <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
 {{ else }}
